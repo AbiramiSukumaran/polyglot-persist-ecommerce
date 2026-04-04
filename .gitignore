@@ -1,0 +1,18 @@
+# Credentials and Environment
+.env
+
+# IDE Folders
+.vscode/
+.idea/
+
+# Internal Tooling & Implementation
+toolbox-implementation/toolbox/
+.readmes/
+
+# Docker & Scripts
+.dockerignore
+extract-mongodb-data.py
+tools.yaml
+
+**/toolbox-implementation/
+**/toolbox/
