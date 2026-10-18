@@ -465,7 +465,10 @@
             }
         });
 
-        window.onload = fetchProducts;
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("DOM fully loaded. Bootstrapping catalog...");
+            fetchProducts();
+        });
     </script>
 </body>
 </html>
