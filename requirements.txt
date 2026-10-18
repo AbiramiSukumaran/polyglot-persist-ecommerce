@@ -1,12 +1,22 @@
+# Web Framework
 Flask==2.3.3
-google-adk==1.27.5
+
+# Agent Framework (Google Agent Development Kit & Vertex AI integrations)
+google-adk>=1.29.0,<2.0.0
 google-cloud-aiplatform==1.143.0
-google-genai>=1.9.0
+google-genai>=1.9.0,<2.0.0
+vertexai
+
+# MCP Toolbox Integration
+toolbox-core==1.4.0
+toolbox-adk==1.4.0
+
+# Database & Storage Clients
+pymongo
+
+# Utilities
+python-dotenv
 requests==2.33.0
 httpx>=0.27.0
 debugpy
-pymongo
-python-dotenv
-toolbox-langchain==0.5.2
-toolbox-core
-vertexai
+flask-cors
