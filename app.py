@@ -43,6 +43,7 @@ PROJECT_ID = os.getenv("PROJECT_ID")
 APP_NAME = os.getenv("APP_NAME")
 USER = "default_user"
 MODEL = os.getenv("MODEL")
+REASONING_ENGINE_LOCATION = os.getenv('REASONING_ENGINE_LOCATION', 'us-central1')
 
 # Fix the initialization
 #client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
@@ -691,7 +692,7 @@ orchestrator = adk.Agent(
     sub_agents=[catalog_agent, inventory_agent, etl_agent, bi_agent]
 )
 
-session_service = VertexAiSessionService(project=PROJECT_ID,location=GOOGLE_CLOUD_LOCATION)
+session_service = VertexAiSessionService(project=PROJECT_ID, location=REASONING_ENGINE_LOCATION)
 
 
 # Initialize the session *outside* of the route handler to avoid repeated creation
