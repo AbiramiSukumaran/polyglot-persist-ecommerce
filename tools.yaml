@@ -8,6 +8,7 @@ sources:
     database: "postgres"
     user: "postgres"
     password: "*****"
+    ipType: "public" # Required for public IP connectivity from Cloud Run without a VPC connector
 
   mongo-source:
     kind: "mongodb"
