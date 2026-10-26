@@ -17,11 +17,11 @@ import vertexai
 from dotenv import load_dotenv
 
 load_dotenv()
-GOOGLE_CLOUD_LOCATION = os.getenv("GOOGLE_CLOUD_LOCATION")
+REASONING_ENGINE_LOCATION = os.getenv("REASONING_ENGINE_LOCATION", "us-central1")
 PROJECT_ID = os.getenv("PROJECT_ID")
 client = vertexai.Client(
   project=PROJECT_ID,
-  location=GOOGLE_CLOUD_LOCATION
+  location=REASONING_ENGINE_LOCATION
 )
 agent_engine = client.agent_engines.create()
 print(agent_engine.api_resource.name)
