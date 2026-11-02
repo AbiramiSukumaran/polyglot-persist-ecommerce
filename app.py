@@ -276,6 +276,8 @@ def safe_load_tool_result(result):
         
         try:
             parsed = json.loads(result_str)
+            if parsed is None:
+                return []
             if isinstance(parsed, dict):
                 for key in ['result', 'data', 'products', 'content', 'items']:
                     if key in parsed and isinstance(parsed[key], list):
@@ -564,6 +566,7 @@ def get_top_5_products():
             # --- 4. MERGE & ENRICH ---
             if core_data or details_data:
                 product = {**details_data, **core_data}
+                product.setdefault('name', product.get('description', '').split(':')[0].replace('High-quality ', '').split(' designed for')[0] or f"New: {product.get('category', 'Product')}")
                 product['total_views'] = top_item.get('interaction_score', top_item.get('interaction_count', 0))
                 sku = product.get('sku')
                 product['image_url'] = f"{GCS_BASE_URL}/{sku}.jpg" if sku else FALLBACK_IMAGE_URL
