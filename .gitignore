@@ -16,7 +16,3 @@ tools.yaml
 
 **/toolbox-implementation/
 **/toolbox/
-# Python
-.venv/
-__pycache__/
-*.pyc
